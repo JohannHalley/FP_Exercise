@@ -29,7 +29,6 @@ dropOddInds (x:y:xs) = [x] ++ dropOddInds xs
 (x:xs) >- y = x ++ y ++ (xs >- y)
 infixr 6 >-
 
-test
 
 
 
