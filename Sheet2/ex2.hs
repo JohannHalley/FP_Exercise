@@ -3,6 +3,7 @@ a) Consider the type List a from the lecture that is defined as follows:
 data List a = Nil | Cons a (List a) deriving Show
 Declare List a as an instance of the type class Eq whenever a is an instance of Eq. Implement the method (==) such that it computes equality between lists entrywise.
 -}
+asd
 
 {-
 b) Give a declaration for a type class Mono for monoids as a subclass of Eq such that for every type a of the
