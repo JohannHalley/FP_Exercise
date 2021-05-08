@@ -10,7 +10,7 @@ conjunction [True,False,True]
 
 -}
 conjunction :: [Bool] -> Bool
-conjunction [] = False
+conjunction [] = True
 conjunction xs = foldr (&&) True xs
 
 {-
