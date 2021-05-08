@@ -29,21 +29,48 @@ parseCalculatorInput xs | elem (map toLower xs) ["q", "e", "exit", "quit"] = Exi
 main :: IO ()
 main = do
   -- task a)
-  -- replace with implementation:
+  putStrLn "Welcome to the simple Haskell calculator!"
+  simpleCalculator 0 (\_ y -> y)
+  putStrLn "Bye!"
   return ()
-  -- end replace
 
 getInput :: IO CalculatorInput
 getInput = do
   -- task b)
-  -- replace with implementation:
-  return Exit
-  -- end replace
+  putChar '>' 
+  input <- getLine 
+  return (parseCalculatorInput input)
 
 simpleCalculator :: Int -> (Int -> Int -> Int) -> IO ()
-simpleCalculator ans op =  do
+simpleCalculator ans op = do
   -- task c)
-  -- replace with implementation:
-  return ()
-  -- end replace
+  input <- getInput
+  case input of
+    Exit -> return ()
+    Error str -> putStrLn (show (Error str)) >> putStrLn (show ans) >> simpleCalculator ans op   
+    Operator f -> simpleCalculator ans f 
+    Number n -> putStrLn (show (op ans n)) >> simpleCalculator (op ans n) op
+
+
+main_e :: IO ()
+main_e = do
+  -- task a)
+  putStrLn "Welcome to the simple Haskell calculator!"
+  comp <- simpleCalculator_e 0 0 (\_ y -> y)
+  putStrLn ("you made " ++ (show comp) ++ " computations")
+  return ()    
+
+simpleCalculator_e :: Int -> Int -> (Int -> Int -> Int) -> IO (Int)
+simpleCalculator_e comp ans op = do
+  -- task c)
+  input <- getInput
+  case input of
+    Exit -> return (comp)
+    Error str -> putStrLn (show (Error str)) >> putStrLn (show ans) >> simpleCalculator_e comp ans op   
+    Operator f -> simpleCalculator_e comp ans f 
+    Number n -> putStrLn (show (op ans n)) >> simpleCalculator_e (comp+1) (op ans n) op
+   
+  
+
+
 
