@@ -3,6 +3,7 @@ a) Provide a list comprehension for the list of all leap years. A year is a leap
 introduced in 1582.
 -}
 {-Test
+:l ex5
 takeWhile ( < 2021) leapYears
 
 -}
