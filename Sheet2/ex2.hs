@@ -16,10 +16,8 @@ Cons 2 (Cons 2 Nil) == Cons 2 (Cons 2 Nil)
 -}
 instance Eq a => Eq (List a) where
     Nil == Nil = True
-    _ == Nil = False
-    Nil == _ = False
     Cons x xs == Cons y ys = x == y && xs == ys
-
+    _ == _ = False
 
 {-
 b) Give a declaration for a type class Mono for monoids as a subclass of Eq such that for every type a of the
