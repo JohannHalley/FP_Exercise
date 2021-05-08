@@ -1,12 +1,7 @@
 --a)
 conjunction :: [Bool] -> Bool
-conjunction [] = True
-conjunction (x:xs) | x = conjunction xs
-                   | otherwise = False
+conjunction = foldr (\x acc -> x && acc) True 
 
 --b)
 universalQ :: (a -> Bool) -> [a] -> Bool
-universalQ f [] = True  
-universalQ f (x:xs) | (f x) = universalQ f xs
-                    | otherwise = False
-          
+universalQ prop = foldr (\x acc-> prop x && acc) True
