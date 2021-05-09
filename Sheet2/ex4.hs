@@ -11,3 +11,24 @@ MultTree c is constructed.
 zipWithMult f (MultNode x xs) (MultNode y ys) = MultNode (f x y) (zipWith (zipWithMult f) xs ys)
 
 
+t1 = MultNode 8 [t1_subtree_0,t1_subtree_1]
+t1_subtree_0 = MultNode 3 [t1_leaf_0,t1_leaf_1,t1_leaf_2]
+t1_subtree_1 = MultNode 4 [t1_leaf_3]
+t1_leaf_0 =  MultNode (-56) []
+t1_leaf_1 =  MultNode 4 []
+t1_leaf_2 =  MultNode 987 []
+t1_leaf_3 =  MultNode 6 []
+
+t2 = MultNode (-2) [t2_subtree_0,t2_subtree_1]
+t2_subtree_0 = MultNode 5 [t2_leaf_0,t2_leaf_1]
+t2_subtree_1 = MultNode (-9) [t2_leaf_2, t2_leaf_3]
+t2_leaf_0 =  MultNode 16 []
+t2_leaf_1 =  MultNode 7 []
+t2_leaf_2 =  MultNode 1 []
+t2_leaf_3 =  MultNode 5 []
+
+{-Test
+:l ex4
+zipWithMult (+) t1 t2
+
+-}

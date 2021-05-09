@@ -28,8 +28,7 @@ universalQ even [2,4]
 universalQ :: (a -> Bool) -> [a] -> Bool
 universalQ f = conjunction.(map f)
 
-{-
-Test:
+{-Test:
 :l ex3
 conjunction []
 conjunction [True,True,True]
