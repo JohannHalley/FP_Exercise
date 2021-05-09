@@ -1,4 +1,5 @@
 posSublistSums :: [Int] -> [Int]
+
 posSublistSums = subListSums.getPos
 
 subListSums :: [Int] -> [Int]
