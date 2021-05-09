@@ -26,3 +26,5 @@ node_5 = Leaf [12,23]
 node_6 = Leaf [26]
 node_7 = Leaf [32,43,98]
 node_8 = Leaf [101]
+
+
