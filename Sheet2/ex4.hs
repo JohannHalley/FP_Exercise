@@ -10,3 +10,4 @@ MultTree c is constructed.
 -}
 zipWithMult f (MultNode x xs) (MultNode y ys) = MultNode (f x y) (zipWith (zipWithMult f) xs ys)
 
+
