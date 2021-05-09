@@ -9,3 +9,4 @@ that behaves similar to the function zipWith for lists, i.e., it combines the tw
 MultTree c is constructed.
 -}
 zipWithMult f (MultNode x xs) (MultNode y ys) = MultNode (f x y) (zipWith (zipWithMult f) xs ys)
+
