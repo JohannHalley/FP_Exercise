@@ -26,3 +26,11 @@ node_5 = Leaf [12,23]
 node_6 = Leaf [26]
 node_7 = Leaf [32,43,98]
 node_8 = Leaf [101]
+
+{-
+:l ex1
+treeToList node_head
+contains 2 node_head
+contains 32 node_7
+
+-}
